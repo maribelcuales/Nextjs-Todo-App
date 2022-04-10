@@ -13,11 +13,11 @@ export default function Todo() {
   };
 
   return (
-    <div>
+    <div className={styles.mainCont}>
       <h1>Todo App</h1>
-      <div>
+      <div className={styles.newTodo}>
         <h3>Add New Todo</h3>
-        <div>
+        <div className={styles.semi}>
           <input
             type="text"
             value={newTodo}
