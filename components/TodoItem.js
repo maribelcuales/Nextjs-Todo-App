@@ -1,6 +1,6 @@
 import { defaultConfig } from 'next/dist/server/config-shared';
 import { React, useState} from 'react';
-import styles from '../../styles/Home.module.css';
+import styles from '../styles/Home.module.css';
 
 export default function TodoItem() {
   const [isChecked, setIsChecked] = useState(false);
@@ -18,7 +18,7 @@ export default function TodoItem() {
             type="checkbox"
             className={styles.toggle}
             defaultChecked= {false}
-            onChange={handlecheck}
+            onChange={handleCheck}
             onClick={() => setIsChecked(!isChecked)}
           />
           <button onClick={handleDelete}>Delete</button>
