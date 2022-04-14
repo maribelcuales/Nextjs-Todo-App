@@ -2,7 +2,7 @@ import { defaultConfig } from 'next/dist/server/config-shared';
 import { React, useState} from 'react';
 import styles from '../../styles/Home.module.css';
 
-export default TodoItem() {
+export default function TodoItem() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleDelete = () => {};
