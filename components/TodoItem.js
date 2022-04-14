@@ -11,7 +11,7 @@ export default function TodoItem() {
 
   return(
     <div>
-      <span className={styles.eachtodo}>
+      <span className={styles.eachTodo}>
         <p className={styles.text}>Eat Breakfast</p>
         <div>
           <input

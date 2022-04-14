@@ -2,7 +2,7 @@
   padding: 0;
 }
 
-.maincont {
+.mainCont {
   background: rgb(8, 8, 49);
   width: 100%;
   min-height: 100vh;
@@ -14,15 +14,15 @@
   color: #fff;
 }
 
-.maincont h1 {
+.mainCont h1 {
   text-transform: uppercase;
 }
 
-.newtodo h3 {
+.newTodo h3 {
   text-align: center;
 }
 
-.newtodo .semi {
+.newTodo .semi {
   display: flex;
   gap: 8px;
 }
@@ -43,14 +43,14 @@
   font-weight: bold;
 }
 
-.eachtodo {
+.eachTodo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.eachtodo div button {
+.eachTodo div button {
   color: red;
   background: none;
   border: none;
@@ -59,7 +59,7 @@
   font-weight: 600;
 }
 
-.maincont button:hover {
+.mainCont button:hover {
   cursor: pointer;
 }
 
