@@ -5,6 +5,8 @@ import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [newTodo, setNewTodo] = useState("");
+  const [data, setData] = useState([]);
+  
   const handleInput = (e) => {
     setNewTodo(e.target.value);
   };
