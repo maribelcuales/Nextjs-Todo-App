@@ -6,7 +6,16 @@ import TodoItem from "./TodoItem";
 export default function Todo() {
   const [newTodo, setNewTodo] = useState("");
   const [data, setData] = useState([]);
-  
+
+  async function fetchData() {
+    const res = await fetch('../api/getData');
+    const newData = await res.json();
+    setData(newData);
+  }
+  useEffect(() => {
+    fetchData();
+  }, [newTodo]);
+
   const handleInput = (e) => {
     setNewTodo(e.target.value);
   };
