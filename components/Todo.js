@@ -8,7 +8,7 @@ export default function Todo() {
   const [data, setData] = useState([]);
 
   async function fetchData() {
-    const res = await fetch('../api/getData');
+    const res = await fetch("../api/getData");
     const newData = await res.json();
     setData(newData);
   }
@@ -34,13 +34,14 @@ export default function Todo() {
             value={newTodo}
             onChange={(e) => handleInput(e)}
           ></input>
-          <button onClick={() => handleSubmit()}>
-            Add Todo
-          </button>
+          <button onClick={() => handleSubmit()}>Add Todo</button>
         </div>
       </div>
       <div>
-        <TodoItem />
+        {data &&
+          data.map((todo) => (
+            <TodoItem key={todo.ref["@ref"].id} todo={todo} />
+          ))}
       </div>
     </div>
   );
