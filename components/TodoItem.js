@@ -17,7 +17,7 @@ export default function TodoItem({ todo }) {
           <input
             type="checkbox"
             className={styles.toggle}
-            defaultChecked= {false}
+            defaultChecked= {todo.data.done}
             onChange={handleCheck}
             onClick={() => setIsChecked(!isChecked)}
           />
