@@ -7,7 +7,12 @@ import newData from '../api/newData';
 export default function Todo() {
   const [newTodo, setNewTodo] = useState("");
   const [data, setData] = useState([]);
-  const [inputData, setInputData] = useState({}); 
+  const [inputData, setInputData] = useState({});
+  const requestParams = {
+    method: "POST",
+    headers: {"Content-Type": "application/json" },
+    body: JSON.stringify({ data: inputData }),
+  };
 
   async function fetchData() {
     const res = await fetch("../api/getData");
