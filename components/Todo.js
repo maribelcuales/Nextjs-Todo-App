@@ -2,10 +2,12 @@
 import { React, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import TodoItem from "./TodoItem";
+import newData from '../api/newData'; 
 
 export default function Todo() {
   const [newTodo, setNewTodo] = useState("");
   const [data, setData] = useState([]);
+  const [inputData, setInputData] = useState({}); 
 
   async function fetchData() {
     const res = await fetch("../api/getData");
