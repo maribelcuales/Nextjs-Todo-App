@@ -25,7 +25,12 @@ export default function Todo() {
 
   const handleInput = (e) => {
     setNewTodo(e.target.value);
+    setInputData({
+      ...inputData,
+      newTodo: e.target.value
+    });
   };
+  
   const handleSubmit = (e) => {
     console.log(newTodo);
   };
