@@ -30,9 +30,11 @@ export default function Todo() {
       newTodo: e.target.value
     });
   };
-  
+
   const handleSubmit = (e) => {
     console.log(newTodo);
+    addTodoItem();
+    setNewTodo(""); 
   };
 
   return (
