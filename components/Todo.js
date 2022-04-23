@@ -37,6 +37,12 @@ export default function Todo() {
     setNewTodo(""); 
   };
 
+  async function addTodoItem() {
+    await fetch("../api/newData", requestParams)
+      .then(() => newData())
+      .catch((e) => console.log(e));
+  }
+
   return (
     <div className={styles.mainCont}>
       <h1>Todo App</h1>
