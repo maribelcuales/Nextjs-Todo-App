@@ -23,6 +23,9 @@ export default function Todo() {
     fetchData();
   }, [newTodo]);
 
+  // The handleinput function is used to assign the input field’s value to the new todo property of inputData. 
+  // The new 'newTodo' is added to the previous ones using the spread operator. 
+  // When the submit button is clicked, it is passed to Fauna via the newData API endpoint.
   const handleInput = (e) => {
     setNewTodo(e.target.value);
     setInputData({
