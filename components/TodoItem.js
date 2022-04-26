@@ -37,6 +37,16 @@ export default function TodoItem({ todo }) {
     deleteItem(); 
   };
 
+  async function deleteItem() {
+    await fetch("../api/deleteData", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: d }),
+    })
+    .then(() => deleteData()) 
+    .catch((e) => console.log(e)); 
+  }
+
   return(
     <div>
       <span className={styles.eachTodo}>
