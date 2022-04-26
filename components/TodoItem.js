@@ -1,9 +1,14 @@
 import { defaultConfig } from 'next/dist/server/config-shared';
 import { React, useState} from 'react';
+import deleteData from '../pages/api/deleteData';
 import styles from '../styles/Home.module.css';
 
 export default function TodoItem({ todo }) {
   const [isChecked, setIsChecked] = useState(false);
+  const [done, isDone] = useState(true); 
+  const [aDelete, isDelete] = useState(""); 
+  const [inputData, setInputData] = useState({}); 
+  let d = ""; 
 
   const handleDelete = () => {};
 
