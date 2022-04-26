@@ -6,13 +6,32 @@ import styles from '../styles/Home.module.css';
 export default function TodoItem({ todo }) {
   const [isChecked, setIsChecked] = useState(false);
   const [done, isDone] = useState(true); 
-  const [aDelete, isDelete] = useState(""); 
+  const [aDelete, isDeleted] = useState(""); 
   const [inputData, setInputData] = useState({}); 
   let d = ""; 
 
-  const handleDelete = () => {};
+  const handleCheck = async () => {
+    isDone(!todo.data.done);
+    let c = !todo.data.done; 
+    isDeleted(todo.ref["@ref"].id);
+    d = todo.ref["@ref"].id;
+    let g = {
+      ...inputData,
+      done: c,
+    };
+    await fetch("../api/updateData", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" }, 
+      
+      body: JSON.stringify({ data: g, id: d }), 
+    })
+    .then(() => deleteData()) 
+    .catch((e) => console.log(e)); 
+  };
 
-  const handleCheck = async () => {};
+  const handleDelete = () => {
+    
+  };
 
   return(
     <div>
