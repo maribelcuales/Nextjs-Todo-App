@@ -10,6 +10,7 @@ export default function TodoItem({ todo }) {
   const [inputData, setInputData] = useState({}); 
   let d = ""; 
 
+  // Bind the update functionality to the checkbox
   const handleCheck = async () => {
     isDone(!todo.data.done);
     let c = !todo.data.done; 
@@ -29,8 +30,11 @@ export default function TodoItem({ todo }) {
     .catch((e) => console.log(e)); 
   };
 
+  // Bind the delete functionality to the delete button
   const handleDelete = () => {
-    
+    d = todo.ref["@ref"].id; 
+    isDeleted(todo.ref["@ref"].id);
+    deleteItem(); 
   };
 
   return(
