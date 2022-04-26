@@ -8,6 +8,8 @@ module.exports = async (req, res) => {
   const id = req.body.id;
   try {
     const dbs = await client.query(
+      // selected task is referenced by its id
+      // delete method is passed to delete it from Faunadb 
       q.Delete(q.Ref(q.Collection("todos"), id))
     );
     res.status(200).json(dbs.data);
