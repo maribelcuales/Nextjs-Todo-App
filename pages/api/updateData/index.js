@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   const id = req.body.id;
   const inputData = req.body.data;
   try {
-    const dba = await client.query(
+    const dbs = await client.query(
       q.Update(q.Ref(q.Collection("todos"), id),  {
         data: { done: inputData.done },
       })
@@ -18,3 +18,4 @@ module.exports = async (req, res) => {
     res.status(500).json({ error: error.message }); 
   }
 }; 
+
