@@ -11,6 +11,8 @@ export default function TodoItem({ todo }) {
   let d = ""; 
 
   // Bind the update functionality to the checkbox
+  // when the value of the checkbox is changed, the opposite value of the previous data is sent to the db 
+  // updating the task of the particular id 
   const handleCheck = async () => {
     isDone(!todo.data.done);
     let c = !todo.data.done; 
