@@ -2,7 +2,7 @@
 import { React, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import TodoItem from "./TodoItem";
-import newData from '../api/newData'; 
+import newData from '../pages/api/newData'; 
 
 export default function Todo() {
   const [newTodo, setNewTodo] = useState("");
